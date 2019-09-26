@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import Container from '../../components/Container';
 import { Line, Circle } from '../../components/Line';
-import { Owner } from './styles';
+import { Owner, IssueList, Label } from './styles';
 
 export default class Repository extends Component {
   static propTypes = {
@@ -74,6 +74,25 @@ export default class Repository extends Component {
           <h1>{repository.name}</h1>
           <p>{repository.description}</p>
         </Owner>
+
+        <IssueList>
+          {issues.map(issue => (
+            <li key={String(issue.id)}>
+              <img src={issue.user.avatar_url} alt={issue.user.login} />
+              <div>
+                <strong>
+                  <a href={issue.html_url}>{issue.title}</a>
+                  {issue.labels.map(label => (
+                    <Label color={label.color} key={String(label.id)}>
+                      {label.name}
+                    </Label>
+                  ))}
+                  <p>{issue.user.login}</p>
+                </strong>
+              </div>
+            </li>
+          ))}
+        </IssueList>
       </Container>
     );
   }

@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
   * {
     margin: 0;
     padding: 0;
@@ -21,6 +23,6 @@ export default createGlobalStyle`
   body, input, button {
     color: #3F3F42;
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   }
 `;

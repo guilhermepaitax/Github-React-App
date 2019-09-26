@@ -29,6 +29,7 @@ module.exports = {
     'react/jsx-filename-extension':
       ['error', { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/prefer-default-export': 'off',
-    "react/state-in-constructor": [0, 'always'],
+    'react/state-in-constructor': [0, 'always'],
+    'react/static-property-placement': 'off',
   }
 };
